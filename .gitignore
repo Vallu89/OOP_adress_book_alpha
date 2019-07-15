@@ -1,2 +1,4 @@
-ks-strukt.cpp
-ks-strukt.zip
+ks-strukt.*
+bin/
+obj/
+Baza_Danych.*
