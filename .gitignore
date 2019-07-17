@@ -1,4 +1,7 @@
-ks-strukt.*
 bin/
 obj/
+ks-strukt.*
 Baza_Danych.*
+*.uxf
+*.txt
+
