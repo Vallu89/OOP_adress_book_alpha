@@ -23,6 +23,7 @@ class UzytkownikMenadzer {
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin( string login );
+    string wczytajLinie();
 
 
 public:

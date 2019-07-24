@@ -83,7 +83,7 @@ int UzytkownikMenadzer::logowanieUzytkownika(){
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end())
     {
-        if (itr -> login == login)
+        if (itr -> pobierzLogin() == login)
         {
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
@@ -106,4 +106,11 @@ int UzytkownikMenadzer::logowanieUzytkownika(){
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
     return 0;
+}
+
+string UzytkownikMenadzer::wczytajLinie(){
+
+    string wejscie = "";
+    getline(cin, wejscie);
+    return wejscie;
 }
