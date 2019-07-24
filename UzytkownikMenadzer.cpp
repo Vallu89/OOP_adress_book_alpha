@@ -90,11 +90,11 @@ int UzytkownikMenadzer::logowanieUzytkownika(){
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
                 haslo = wczytajLinie();
 
-                if (itr -> haslo == haslo)
+                if (itr -> pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return itr -> id;
+                    return itr -> pobierzId();
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
