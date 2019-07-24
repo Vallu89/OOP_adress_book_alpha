@@ -23,10 +23,13 @@ class UzytkownikMenadzer {
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin( string login );
+    string wczytajLinie();
 
 
 public:
-    UzytkownikMenadzer( string nazwaPlikuZUzytkownikami ): plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+
+    UzytkownikMenadzer( string nazwaPlikuZUzytkownikami ): plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
+    int logowanieUzytkownika();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
