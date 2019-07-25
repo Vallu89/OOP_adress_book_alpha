@@ -20,3 +20,9 @@ void KsiazkaAdresowa::logowanieUzytkownika(){
     uzytkownikMenadzer.logowanieUzytkownika();
 
 }
+
+void KsiazkaAdresowa::wylogujUzytkownika(){
+
+    uzytkownikMenadzer.wylogujUzytkownika();
+
+}

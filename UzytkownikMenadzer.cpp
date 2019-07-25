@@ -116,3 +116,9 @@ string UzytkownikMenadzer::wczytajLinie(){
     getline(cin, wejscie);
     return wejscie;
 }
+
+void UzytkownikMenadzer::wylogujUzytkownika(){
+
+    idZalogowanegoUzytkownika = 0;
+    //adresaci.clear();
+}
