@@ -14,6 +14,7 @@ using namespace std;
 
 class UzytkownikMenadzer {
 
+    friend class PlikZUzytkownikami;
 
     int idZalogowanegoUzytkownika;
     PlikZUzytkownikami plikZUzytkownikami;
@@ -34,6 +35,8 @@ public:
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     void wylogujUzytkownika();
+    vector <Uzytkownik> zmianaHaslaZalogowanegoUzytkownika();
+
 };
 
 #endif
