@@ -8,8 +8,10 @@
 #include <fstream>
 
 
-#include "uzytkownik.h"
+#include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
+#include "Adresat.h"
+
 
 
 
@@ -29,6 +31,8 @@ public:
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);
+    vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(pobierzIdZalogowanegoUzytkownika());
+
 
 };
 

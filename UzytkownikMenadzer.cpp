@@ -141,3 +141,8 @@ vector <Uzytkownik> UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
     return uzytkownicy;
 }
+
+int UzytkownikMenadzer:: pobierzIdZalogowanegoUzytkownika(){
+
+    return idZalogowanegoUzytkownika;
+}

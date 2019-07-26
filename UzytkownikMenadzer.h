@@ -36,6 +36,7 @@ public:
     void wczytajUzytkownikowZPliku();
     void wylogujUzytkownika();
     vector <Uzytkownik> zmianaHaslaZalogowanegoUzytkownika();
+    int pobierzIdZalogowanegoUzytkownika();
 
 };
 
