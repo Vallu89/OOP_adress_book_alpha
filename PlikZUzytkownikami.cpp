@@ -104,11 +104,11 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
     return uzytkownik;
 }
 
-vector <Uzytkownik> PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku()
+void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy)
 {
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
-    vector <Uzytkownik>::iterator itrKoniec = --uzytkownicy.end();
+    vector <Uzytkownik>::iterator itrKoniec = uzytkownicy.end();
 
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::out);
 
@@ -134,5 +134,4 @@ vector <Uzytkownik> PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku()
         cout << "Nie mozna otworzyc pliku " << nazwaPlikuZUzytkownikami << endl;
     }
     plikTekstowy.close();
-
 }

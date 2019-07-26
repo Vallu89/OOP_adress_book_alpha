@@ -138,6 +138,6 @@ vector <Uzytkownik> UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
             system("pause");
         }
     }
-    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku();
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
     return uzytkownicy;
 }
