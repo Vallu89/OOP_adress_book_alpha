@@ -1,5 +1,5 @@
 #include "PlikZUzytkownikami.h"
-#include "UzytkownikMenadzer.h"
+
 
 
 

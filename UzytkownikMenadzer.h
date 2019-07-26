@@ -14,9 +14,9 @@ using namespace std;
 
 class UzytkownikMenadzer {
 
-    friend class PlikZUzytkownikami;
+    friend class AdresatMenadzer;
 
-    int idZalogowanegoUzytkownika;
+    static int idZalogowanegoUzytkownika;
     PlikZUzytkownikami plikZUzytkownikami;
 
     vector <Uzytkownik> uzytkownicy;
