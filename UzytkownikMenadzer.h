@@ -16,7 +16,7 @@ class UzytkownikMenadzer {
 
     friend class AdresatMenadzer;
 
-    static int idZalogowanegoUzytkownika;
+    int idZalogowanegoUzytkownika;
     PlikZUzytkownikami plikZUzytkownikami;
 
     vector <Uzytkownik> uzytkownicy;
