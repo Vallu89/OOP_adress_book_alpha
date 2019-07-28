@@ -97,6 +97,6 @@ Adresat AdresatMenadzer::pobierzDaneAdresata(string daneAdresataOddzielonePionow
 int AdresatMenadzer::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami()
 {
     int pozycjaRozpoczeciaIdAdresata = 0;
-    int idAdresata = konwersjaStringNaInt(pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
+    int idAdresata = MetodyPomocnicze::konwersjaStringNaInt(MetodyPomocnicze::pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
     return idAdresata;
 }
