@@ -11,6 +11,7 @@
 #include "UzytkownikMenadzer.h"
 #include "PlikZUzytkownikami.h"
 #include "MetodyPomocnicze.h"
+#include "Adresat.h"
 
 using namespace std;
 
@@ -22,6 +23,7 @@ class AdresatMenadzer{
     string daneJednegoAdresataOddzielonePionowymiKreskami;
     int idOstatniegoAdresata;
     string daneOstaniegoAdresataWPliku;
+
 
 
     vector <Adresat> adresaci;

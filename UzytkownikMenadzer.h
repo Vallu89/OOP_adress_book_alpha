@@ -18,12 +18,14 @@ public:
     friend class AdresatMenadzer;
     friend class PlikZUzytkownikami;
 
+
 private:
-    static int idZalogowanegoUzytkownika;
+
     PlikZUzytkownikami plikZUzytkownikami;
 
     vector <Uzytkownik> uzytkownicy;
 
+    int idZalogowanegoUzytkownika;
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin( string login );
