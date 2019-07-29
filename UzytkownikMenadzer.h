@@ -14,13 +14,18 @@ using namespace std;
 
 class UzytkownikMenadzer {
 
+public:
     friend class AdresatMenadzer;
+    friend class PlikZUzytkownikami;
 
-    int idZalogowanegoUzytkownika;
+
+private:
+
     PlikZUzytkownikami plikZUzytkownikami;
 
     vector <Uzytkownik> uzytkownicy;
 
+    int idZalogowanegoUzytkownika;
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin( string login );
@@ -36,6 +41,7 @@ public:
     void wczytajUzytkownikowZPliku();
     void wylogujUzytkownika();
     vector <Uzytkownik> zmianaHaslaZalogowanegoUzytkownika();
+    int pobierzIdZalogowanegoUzytkownika();
 
 };
 

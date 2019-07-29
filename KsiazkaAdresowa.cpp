@@ -26,3 +26,9 @@ void KsiazkaAdresowa::wylogujUzytkownika(){
     uzytkownikMenadzer.wylogujUzytkownika();
 
 }
+
+void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku(){
+
+    uzytkownikMenadzer.wylogujUzytkownika();
+
+}
