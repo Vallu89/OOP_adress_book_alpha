@@ -25,7 +25,7 @@ private:
 
     vector <Uzytkownik> uzytkownicy;
 
-    int idZalogowanegoUzytkownika;
+
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin( string login );
@@ -34,14 +34,15 @@ private:
 
 public:
 
-    UzytkownikMenadzer( string nazwaPlikuZUzytkownikami ): plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
+    UzytkownikMenadzer( string nazwaPlikuZUzytkownikami): plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     int logowanieUzytkownika();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     void wylogujUzytkownika();
     vector <Uzytkownik> zmianaHaslaZalogowanegoUzytkownika();
-    int pobierzIdZalogowanegoUzytkownika();
+    int idZalogowanegoUzytkownika;
+
 
 };
 

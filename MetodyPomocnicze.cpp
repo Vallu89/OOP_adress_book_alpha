@@ -31,3 +31,12 @@ string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku)
     }
     return liczba;
 }
+
+string MetodyPomocnicze::wczytajLinie()
+{
+    string wejscie = "";
+    getline(cin, wejscie);
+    return wejscie;
+}
+
+

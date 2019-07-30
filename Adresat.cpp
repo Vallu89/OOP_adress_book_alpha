@@ -32,7 +32,7 @@ void Adresat::ustawId(int noweId) {
         adres = nowyAdres;
     }
 
-    int Adresat::pobierzIdAdresata(){
+    int Adresat::pobierzId(){
 
         return id;
     }

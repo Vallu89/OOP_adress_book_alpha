@@ -13,6 +13,9 @@ public:
         static string konwerjsaIntNaString(int liczba);
         static int konwersjaStringNaInt(string liczba);
         static string pobierzLiczbe(string tekst, int pozycjaZnaku);
+        static string wczytajLinie();
+        bool czyPlikJestPusty(fstream &plikTekstowy);
+
 };
 
 #endif

@@ -142,7 +142,3 @@ vector <Uzytkownik> UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
     return uzytkownicy;
 }
 
-int UzytkownikMenadzer:: pobierzIdZalogowanegoUzytkownika(){
-
-    return idZalogowanegoUzytkownika;
-}

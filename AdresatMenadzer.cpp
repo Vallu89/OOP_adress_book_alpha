@@ -1,9 +1,9 @@
 #include "AdresatMenadzer.h"
 
-AdresatMenadzer::AdresatMenadzer(){
+AdresatMenadzer::AdresatMenadzer ( int IDZALOGOWANEGOUZYTKOWNIKA ) : uzytkownikMenadzer ( idZalogowanegoUzytkownika ) {
+
 
     nazwaPlikuZAdresatami = "Adresaci.txt";
-
 }
 
 
@@ -13,6 +13,7 @@ int AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
     daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;
 
+
     daneJednegoAdresataOddzielonePionowymiKreskami = "";
     idOstatniegoAdresata = 0;
     plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
@@ -21,11 +22,11 @@ int AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
         {
-            //if(idZalogowanegoUzytkownika == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami())
-            //{
+            if(uzytkownikMenadzer.idZalogowanegoUzytkownika == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami())
+            {
                 adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
                 adresaci.push_back(adresat);
-            //}
+            }
         }
         daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
     }
@@ -102,3 +103,97 @@ int AdresatMenadzer::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami()
     int idAdresata = MetodyPomocnicze::konwersjaStringNaInt(MetodyPomocnicze::pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
     return idAdresata;
 }
+
+int AdresatMenadzer::dodajAdresata(vector <Adresat> &adresaci)
+{
+    Adresat adresat;
+
+    system("cls");
+    cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
+    adresat = podajDaneNowegoAdresata();
+
+    adresaci.push_back(adresat);
+    dopiszAdresataDoPliku(adresat);
+
+    return ++idOstatniegoAdresata;
+}
+
+Adresat AdresatMenadzer::podajDaneNowegoAdresata()
+{
+    Adresat adresat;
+
+    adresat.ustawId(++idOstatniegoAdresata);
+    adresat.ustawIdUzytkownika(uzytkownikMenadzer.idZalogowanegoUzytkownika);
+
+    cout << "Podaj imie: ";
+    adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
+    //adresat.imie = zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.imie);
+
+    cout << "Podaj nazwisko: ";
+    adresat.ustawNazwisko(MetodyPomocnicze::wczytajLinie());
+    //adresat.nazwisko = zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.nazwisko);
+
+    cout << "Podaj numer telefonu: ";
+    adresat.ustawNumerTelefonu(MetodyPomocnicze::wczytajLinie());
+
+    cout << "Podaj email: ";
+    adresat.ustawEmail(MetodyPomocnicze::wczytajLinie());
+
+    cout << "Podaj adres: ";
+    adresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
+
+    return adresat;
+}
+
+string AdresatMenadzer::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat)
+{
+    string liniaZDanymiAdresata = "";
+
+    liniaZDanymiAdresata += MetodyPomocnicze::konwerjsaIntNaString(adresat.pobierzId()) + '|';
+    liniaZDanymiAdresata += MetodyPomocnicze::konwerjsaIntNaString(adresat.pobierzIdUzytkownika()) + '|';
+    liniaZDanymiAdresata += adresat.pobierzImie() + '|';
+    liniaZDanymiAdresata += adresat.pobierzNazwisko() + '|';
+    liniaZDanymiAdresata += adresat.pobierzNumerTelefonu() + '|';
+    liniaZDanymiAdresata += adresat.pobierzEmail() + '|';
+    liniaZDanymiAdresata += adresat.pobierzAdres() + '|';
+
+    return liniaZDanymiAdresata;
+}
+
+void AdresatMenadzer::dopiszAdresataDoPliku(Adresat adresat)
+{
+    string liniaZDanymiAdresata = "";
+    fstream plikTekstowy;
+    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::out | ios::app);
+
+    if (plikTekstowy.good() == true)
+    {
+        liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
+
+        if (czyPlikJestPusty(plikTekstowy) == true)
+        {
+            plikTekstowy << liniaZDanymiAdresata;
+        }
+        else
+        {
+            plikTekstowy << endl << liniaZDanymiAdresata ;
+        }
+    }
+    else
+    {
+        cout << "Nie udalo sie otworzyc pliku i zapisac w nim danych." << endl;
+    }
+    plikTekstowy.close();
+    system("pause");
+}
+
+bool AdresatMenadzer::czyPlikJestPusty(fstream &plikTekstowy)
+{
+    plikTekstowy.seekg(0, ios::end);
+    if (plikTekstowy.tellg() == 0)
+        return true;
+    else
+        return false;
+}
+
+

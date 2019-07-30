@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1564510521 source:e:\przyszlyprogramista\objectc++\baza_danych\ksiazkaadresowa.cpp
+	"KsiazkaAdresowa.h"
+
+1563907811 source:e:\przyszlyprogramista\objectc++\baza_danych\uzytkownik.cpp
+	"Uzytkownik.h"
+
+1564001987 source:e:\przyszlyprogramista\objectc++\baza_danych\main.cpp
+	<iostream>
+	"KsiazkaAdresowa.h"
+
+1564511661 e:\przyszlyprogramista\objectc++\baza_danych\ksiazkaadresowa.h
+	<iostream>
+	"UzytkownikMenadzer.h"
+	"AdresatMenadzer.h"
+
+1563997472 e:\przyszlyprogramista\objectc++\baza_danych\uzytkownik.h
+	<iostream>
+
+1564517482 source:e:\przyszlyprogramista\objectc++\baza_danych\metodypomocnicze.cpp
+	"MetodyPomocnicze.h"
+	<iostream>
+	<sstream>
+
+1564518127 e:\przyszlyprogramista\objectc++\baza_danych\metodypomocnicze.h
+	<iostream>
+
+1564518127 e:\przyszlyprogramista\objectc++\baza_danych\uzytkownikmenadzer.h
+	<iostream>
+	<vector>
+	<windows.h>
+	<fstream>
+	<sstream>
+	"uzytkownik.h"
+	"PlikZUzytkownikami.h"
+
+1564432554 e:\przyszlyprogramista\objectc++\baza_danych\plikzuzytkownikami.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Uzytkownik.h"
+	"MetodyPomocnicze.h"
+	"Adresat.h"
+
+1564511638 source:e:\przyszlyprogramista\objectc++\baza_danych\uzytkownikmenadzer.cpp
+	"UzytkownikMenadzer.h"
+
+1564432554 source:e:\przyszlyprogramista\objectc++\baza_danych\plikzuzytkownikami.cpp
+	"PlikZUzytkownikami.h"
+
+1564500385 source:e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.cpp
+	"AdresatMenadzer.h"
+
+1564518127 e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.h
+	<iostream>
+	<vector>
+	<windows.h>
+	<fstream>
+	<sstream>
+	"uzytkownik.h"
+	"UzytkownikMenadzer.h"
+	"PlikZUzytkownikami.h"
+	"MetodyPomocnicze.h"
+	"Adresat.h"
+
+1564517182 source:e:\przyszlyprogramista\objectc++\baza_danych\adresat.cpp
+	"Adresat.h"
+
+1564518127 e:\przyszlyprogramista\objectc++\baza_danych\adresat.h
+	<iostream>
+

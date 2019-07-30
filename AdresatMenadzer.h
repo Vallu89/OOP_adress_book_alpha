@@ -23,7 +23,10 @@ class AdresatMenadzer{
     string daneJednegoAdresataOddzielonePionowymiKreskami;
     int idOstatniegoAdresata;
     string daneOstaniegoAdresataWPliku;
+    string liniaZDanymiAdresata;
 
+    UzytkownikMenadzer uzytkownikMenadzer;
+    PlikZUzytkownikami plikzuzytkownikami;
 
 
     vector <Adresat> adresaci;
@@ -31,6 +34,10 @@ class AdresatMenadzer{
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami();
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami();
+    Adresat podajDaneNowegoAdresata();
+    void dopiszAdresataDoPliku(Adresat adresat);
+    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
+    bool czyPlikJestPusty(fstream &plikTekstowy);
 
 
 
@@ -38,7 +45,7 @@ class AdresatMenadzer{
 public:
     AdresatMenadzer();
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-
+    int dodajAdresata(vector <Adresat> &adresaci);
 
 };
 
