@@ -46,6 +46,8 @@ public:
     AdresatMenadzer();
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     int dodajAdresata(vector <Adresat> &adresaci);
+    void wyswietlWszystkichAdresatow(vector <Adresat> &adresaci);
+    void wyswietlDaneAdresata(Adresat adresat);
 
 };
 
