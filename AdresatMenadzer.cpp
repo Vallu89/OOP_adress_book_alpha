@@ -1,10 +1,5 @@
 #include "AdresatMenadzer.h"
 
-AdresatMenadzer::AdresatMenadzer ( int IDZALOGOWANEGOUZYTKOWNIKA ) : uzytkownikMenadzer ( idZalogowanegoUzytkownika ) {
-
-
-    nazwaPlikuZAdresatami = "Adresaci.txt";
-}
 
 
 int AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()

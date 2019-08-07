@@ -43,7 +43,7 @@ class AdresatMenadzer{
 
 
 public:
-    AdresatMenadzer();
+    AdresatMenadzer(string nazwaPlikuZAdresatami);
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     int dodajAdresata(vector <Adresat> &adresaci);
     void wyswietlWszystkichAdresatow(vector <Adresat> &adresaci);
