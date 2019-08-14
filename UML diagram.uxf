@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+fontsize=10
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>12</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>300</y>
+      <w>300</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>KsiążkaAdresowa
+--
+
+-uzytkownikMenadzer: UzytkownikMenadzer
+-adresatMenadzer: *AdresatMenadzer
+-NAZWA_PLIK_Z_ADRESATAMI: string
+
+--
++KsiazkaAdresowa()
++~KsiazkaAdresowa()
++rejestracjaUzytkownika(): void
++wypiszWszystkichUzytkownikow(): void
++zmianaHaslaZalogowanegoUzytkownika(): void
++logowanieUzytkownika(): void
++wylogujUzytkownika(): void
++wczytajAdresatowZalogowanegoUzytkownikaZPliku(): void
++dodajAdresata(): void
++wyswietlWszystkichAdresatow(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>312</x>
+      <y>396</y>
+      <w>120</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Uzytkownik
+--
+
+-id: integer
+-login: integer
+-haslo: integer
+
+--
+
++ustawId(): void
++ustawLogin(): void
++ustawHaslo(): void
++pobierzId(): integer
++pobierzLogin(): string
++pobierzHaslo(): string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>288</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>UzytkownikMenadzer
+--
+
+-idZalogowanegoUzytkownika: integer
+-uzytkownicy: vector &lt;Uzytkownik&gt;
+-plikZUzytkownikami: PlikZUzytkownikami
+
+--
++logowanieUzytkownika(): integer
++rejestracjaUzytkownika(): void
++wypiszWszystkichUzytkownikow(): void
++wczytajUzytkownikowZPliku(): void 
++wylogujUzytkownika():void
++zmianaHaslaZalogowanegoUzytkownika(): void
++pobierzIdZalogowanegoUzytkownika(): integer
+-podajDaneNowegoUzytkownika(): Uzytkownik
+-pobierzIdNowegoUzytkownika(): integer
+-czyIstniejeLogin(): boolean
+-wczytajLinie(): string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>12</x>
+      <y>576</y>
+      <w>312</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>PlikZUzytkownikami
+--
+
+-NAZWA_PLIKU_Z_UZYTKOWNIKAMI: const string 
+
+
+--
+
++PlikZUzytkownikami()
++dopiszUzytkownikaDoPliku(): void
++wczytajUzytkownikowZPliku: vector &lt;Uzytkownik&gt;
++zapiszWszystkichUzytkownikowDoPliku(): void
+-czyPlikJestPusty(): boolean
+-zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): string
+-pobierzDaneUzytkownika(): Uzytkownik
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>804</y>
+      <w>264</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+--
+
++konwersjaIntNaString(): static string
++konwersjaStringNaInt(): static integer
++pobierzLiczbe(): static string
++wczytajLinie(): static string
++czyPlikJestPusty(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>0</y>
+      <w>288</w>
+      <h>372</h>
+    </coordinates>
+    <panel_attributes>AdresatMenadzer
+--
+-adresat: Adresat
+-idAdresata: integer
+-ID_ZALOGOWANEGO_UZYTKOWNIKA: const integer
+-nazwaPlikuZAdresatami: string
+-daneJednegoAdresataOddzielonePionowymiKreskami: string
+-idOstatniegoAdresata: integer
+-daneOstaniegoAdresataWPliku: string
+-liniaZDanymiAdresata: string
+-adresaci: vector &lt;Adresat&gt;
+
+--
+
+-pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(): integer
+-pobierzDaneAdresata(): Adresat
+-pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): integer
+-podajDaneNowegoAdresata(): Adresat
+-dopiszAdresataDoPliku(): void
+-zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): string
+-czyPlikJestPusty(): boolean
++AdresatMenadzer()
++wczytajAdresatowZalogowanegoUzytkownikaZPliku(): Adresat
++dodajAdresata(): integer
++wyswietlWszystkichAdresatow(): void
++wyswietlDaneAdresata(): void
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>444</x>
+      <y>396</y>
+      <w>180</w>
+      <h>384</h>
+    </coordinates>
+    <panel_attributes>Adresat
+--
+
+-id: integer
+-idUzytkownika: integer
+-imie: string
+-nazwisko: string
+-numerTelefonu: string
+-email: string
+-adres: string
+
+--
+
++ustawId(): void
++ustawIdUzytkownika(): void
++ustawImie(): void
++ustawNazwisko(): void
++ustawNumerTelefonu(): void
++ustawEmail(): void
++ustawAdres(): void
++pobierzId(): integer
++pobierzIdUzytkownika(): integer
++pobierzImie(): string
++pobierzNazwisko(): string
++pobierzNumerTelefonu(): string
++pobierzEmail(): string
++pobierzAdres(): string
+
+ 
+
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

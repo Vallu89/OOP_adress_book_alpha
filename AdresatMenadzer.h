@@ -30,12 +30,6 @@ class AdresatMenadzer{
 
     friend class KsiazkaAdresowa;
 
-    AdresatMenadzer( string NAZWAPLIKUZADRESATAMI , int idZalogowanegoUzytkownika )
-        : nazwaPlikuZAdresatami ( NAZWAPLIKUZADRESATAMI ), ID_ZALOGOWANEGO_UZYTKOWNIKA ( idZalogowanegoUzytkownika ) {
-
-        adresat = wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-    };
-
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami();
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami();
@@ -45,7 +39,11 @@ class AdresatMenadzer{
     bool czyPlikJestPusty(fstream &plikTekstowy);
 
 public:
+    AdresatMenadzer( string NAZWAPLIKUZADRESATAMI , int idZalogowanegoUzytkownika )
+        : nazwaPlikuZAdresatami ( NAZWAPLIKUZADRESATAMI ), ID_ZALOGOWANEGO_UZYTKOWNIKA ( idZalogowanegoUzytkownika ) {
 
+        adresat = wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    };
     Adresat wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     int dodajAdresata();
     void wyswietlWszystkichAdresatow();
