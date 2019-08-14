@@ -69,3 +69,74 @@
 1564603309 e:\przyszlyprogramista\objectc++\baza_danych\adresat.h
 	<iostream>
 
+1564606910 source:d:\codeblocks\c++\object c++\objectc++\baza_danych\adresat.cpp
+	"Adresat.h"
+
+1564606910 d:\codeblocks\c++\object c++\objectc++\baza_danych\adresat.h
+	<iostream>
+
+1565801804 source:d:\codeblocks\c++\object c++\objectc++\baza_danych\adresatmenadzer.cpp
+	"AdresatMenadzer.h"
+
+1565801485 d:\codeblocks\c++\object c++\objectc++\baza_danych\adresatmenadzer.h
+	<iostream>
+	<vector>
+	<windows.h>
+	<fstream>
+	<sstream>
+	"uzytkownik.h"
+	"UzytkownikMenadzer.h"
+	"PlikZUzytkownikami.h"
+	"MetodyPomocnicze.h"
+	"Adresat.h"
+
+1564001074 d:\codeblocks\c++\object c++\objectc++\baza_danych\uzytkownik.h
+	<iostream>
+
+1565792280 d:\codeblocks\c++\object c++\objectc++\baza_danych\uzytkownikmenadzer.h
+	<iostream>
+	<vector>
+	<windows.h>
+	<fstream>
+	<sstream>
+	"uzytkownik.h"
+	"PlikZUzytkownikami.h"
+
+1565791999 d:\codeblocks\c++\object c++\objectc++\baza_danych\plikzuzytkownikami.h
+	<iostream>
+	<vector>
+	<fstream>
+	<cstdlib>
+	"Uzytkownik.h"
+	"MetodyPomocnicze.h"
+	"Adresat.h"
+
+1564606910 d:\codeblocks\c++\object c++\objectc++\baza_danych\metodypomocnicze.h
+	<iostream>
+
+1565801485 source:d:\codeblocks\c++\object c++\objectc++\baza_danych\ksiazkaadresowa.cpp
+	"KsiazkaAdresowa.h"
+
+1565802034 d:\codeblocks\c++\object c++\objectc++\baza_danych\ksiazkaadresowa.h
+	<iostream>
+	"UzytkownikMenadzer.h"
+	"AdresatMenadzer.h"
+
+1565443629 source:d:\codeblocks\c++\object c++\objectc++\baza_danych\main.cpp
+	<iostream>
+	"KsiazkaAdresowa.h"
+
+1564606910 source:d:\codeblocks\c++\object c++\objectc++\baza_danych\metodypomocnicze.cpp
+	"MetodyPomocnicze.h"
+	<iostream>
+	<sstream>
+
+1565444165 source:d:\codeblocks\c++\object c++\objectc++\baza_danych\plikzuzytkownikami.cpp
+	"PlikZUzytkownikami.h"
+
+1563911412 source:d:\codeblocks\c++\object c++\objectc++\baza_danych\uzytkownik.cpp
+	"Uzytkownik.h"
+
+1565637262 source:d:\codeblocks\c++\object c++\objectc++\baza_danych\uzytkownikmenadzer.cpp
+	"UzytkownikMenadzer.h"
+

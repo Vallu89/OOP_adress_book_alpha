@@ -67,14 +67,8 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow(){
         }
 }
 
-void UzytkownikMenadzer::wczytajUzytkownikowZPliku(){
-
-   uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 int UzytkownikMenadzer::logowanieUzytkownika(){
 
-    Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
@@ -142,3 +136,15 @@ vector <Uzytkownik> UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
     return uzytkownicy;
 }
 
+bool UzytkownikMenadzer::czyUzytkownikJestZalogowany(){
+
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
+}
+
+int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika(){
+
+    return idZalogowanegoUzytkownika;
+}

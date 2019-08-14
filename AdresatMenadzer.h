@@ -17,37 +17,39 @@ using namespace std;
 
 class AdresatMenadzer{
 
-    int id, idUzytkownika, idAdresata;
-    string imie, nazwisko, numerTelefonu, email, adres;
+    Adresat adresat;
+    int idAdresata;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     string nazwaPlikuZAdresatami;
     string daneJednegoAdresataOddzielonePionowymiKreskami;
     int idOstatniegoAdresata;
     string daneOstaniegoAdresataWPliku;
     string liniaZDanymiAdresata;
 
-    UzytkownikMenadzer uzytkownikMenadzer;
-    PlikZUzytkownikami plikzuzytkownikami;
-
-
     vector <Adresat> adresaci;
+
+    friend class KsiazkaAdresowa;
+
+    AdresatMenadzer( string NAZWAPLIKUZADRESATAMI , int idZalogowanegoUzytkownika )
+        : nazwaPlikuZAdresatami ( NAZWAPLIKUZADRESATAMI ), ID_ZALOGOWANEGO_UZYTKOWNIKA ( idZalogowanegoUzytkownika ) {
+
+        adresat = wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    };
 
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami();
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami();
     Adresat podajDaneNowegoAdresata();
-    void dopiszAdresataDoPliku(Adresat adresat);
-    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
+    void dopiszAdresataDoPliku();
+    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami();
     bool czyPlikJestPusty(fstream &plikTekstowy);
 
-
-
-
 public:
-    AdresatMenadzer(string nazwaPlikuZAdresatami);
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-    int dodajAdresata(vector <Adresat> &adresaci);
-    void wyswietlWszystkichAdresatow(vector <Adresat> &adresaci);
-    void wyswietlDaneAdresata(Adresat adresat);
+
+    Adresat wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    int dodajAdresata();
+    void wyswietlWszystkichAdresatow();
+    void wyswietlDaneAdresata();
 
 };
 

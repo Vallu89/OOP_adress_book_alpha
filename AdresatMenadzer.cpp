@@ -2,7 +2,7 @@
 
 
 
-int AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+Adresat AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
     Adresat adresat;
     daneOstaniegoAdresataWPliku = "";
@@ -17,7 +17,7 @@ int AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
         {
-            if(uzytkownikMenadzer.idZalogowanegoUzytkownika == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami())
+            if( ID_ZALOGOWANEGO_UZYTKOWNIKA == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami())
             {
                 adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
                 adresaci.push_back(adresat);
@@ -33,10 +33,8 @@ int AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
     if (daneOstaniegoAdresataWPliku != "")
     {
         idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami();
-        return idOstatniegoAdresata;
     }
-    else
-        return 0;
+    return adresat;
 }
 
 int AdresatMenadzer::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami()
@@ -99,7 +97,7 @@ int AdresatMenadzer::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami()
     return idAdresata;
 }
 
-int AdresatMenadzer::dodajAdresata(vector <Adresat> &adresaci)
+int AdresatMenadzer::dodajAdresata()
 {
     Adresat adresat;
 
@@ -108,7 +106,7 @@ int AdresatMenadzer::dodajAdresata(vector <Adresat> &adresaci)
     adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
-    dopiszAdresataDoPliku(adresat);
+    dopiszAdresataDoPliku();
 
     return ++idOstatniegoAdresata;
 }
@@ -118,7 +116,7 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata()
     Adresat adresat;
 
     adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(uzytkownikMenadzer.idZalogowanegoUzytkownika);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
@@ -140,7 +138,7 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata()
     return adresat;
 }
 
-string AdresatMenadzer::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat)
+string AdresatMenadzer::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami()
 {
     string liniaZDanymiAdresata = "";
 
@@ -155,7 +153,7 @@ string AdresatMenadzer::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKre
     return liniaZDanymiAdresata;
 }
 
-void AdresatMenadzer::dopiszAdresataDoPliku(Adresat adresat)
+void AdresatMenadzer::dopiszAdresataDoPliku()
 {
     string liniaZDanymiAdresata = "";
     fstream plikTekstowy;
@@ -163,7 +161,7 @@ void AdresatMenadzer::dopiszAdresataDoPliku(Adresat adresat)
 
     if (plikTekstowy.good() == true)
     {
-        liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
+        liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami();
 
         if (czyPlikJestPusty(plikTekstowy) == true)
         {
@@ -191,7 +189,7 @@ bool AdresatMenadzer::czyPlikJestPusty(fstream &plikTekstowy)
         return false;
 }
 
-void AdresatMenadzer::wyswietlWszystkichAdresatow(vector <Adresat> &adresaci)
+void AdresatMenadzer::wyswietlWszystkichAdresatow()
 {
     system("cls");
     if (!adresaci.empty())
@@ -200,7 +198,7 @@ void AdresatMenadzer::wyswietlWszystkichAdresatow(vector <Adresat> &adresaci)
         cout << "-----------------------------------------------" << endl;
         for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
         {
-            wyswietlDaneAdresata(*itr);
+            wyswietlDaneAdresata();
         }
         cout << endl;
     }
@@ -211,7 +209,7 @@ void AdresatMenadzer::wyswietlWszystkichAdresatow(vector <Adresat> &adresaci)
     system("pause");
 }
 
-void AdresatMenadzer::wyswietlDaneAdresata(Adresat adresat)
+void AdresatMenadzer::wyswietlDaneAdresata()
 {
     cout << endl << "Id:                 " << adresat.pobierzId() << endl;
     cout << "Imie:               " << adresat.pobierzImie() << endl;
