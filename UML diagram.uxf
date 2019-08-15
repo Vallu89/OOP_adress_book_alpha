@@ -94,13 +94,14 @@ fontsize=10
 -plikZUzytkownikami: PlikZUzytkownikami
 
 --
++UzytkownikMenadzer()
 +logowanieUzytkownika(): integer
 +rejestracjaUzytkownika(): void
 +wypiszWszystkichUzytkownikow(): void
-+wczytajUzytkownikowZPliku(): void 
 +wylogujUzytkownika():void
 +zmianaHaslaZalogowanegoUzytkownika(): void
 +pobierzIdZalogowanegoUzytkownika(): integer
++czyUzytkownikJestZalogowany(): boolean
 -podajDaneNowegoUzytkownika(): Uzytkownik
 -pobierzIdNowegoUzytkownika(): integer
 -czyIstniejeLogin(): boolean

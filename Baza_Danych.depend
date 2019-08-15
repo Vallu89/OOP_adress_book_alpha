@@ -93,7 +93,7 @@
 1564001074 d:\codeblocks\c++\object c++\objectc++\baza_danych\uzytkownik.h
 	<iostream>
 
-1565792280 d:\codeblocks\c++\object c++\objectc++\baza_danych\uzytkownikmenadzer.h
+1565861657 d:\codeblocks\c++\object c++\objectc++\baza_danych\uzytkownikmenadzer.h
 	<iostream>
 	<vector>
 	<windows.h>
@@ -122,7 +122,7 @@
 	"UzytkownikMenadzer.h"
 	"AdresatMenadzer.h"
 
-1565443629 source:d:\codeblocks\c++\object c++\objectc++\baza_danych\main.cpp
+1565861756 source:d:\codeblocks\c++\object c++\objectc++\baza_danych\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
 

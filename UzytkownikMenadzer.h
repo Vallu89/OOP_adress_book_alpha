@@ -14,11 +14,6 @@ using namespace std;
 
 class UzytkownikMenadzer {
 
-public:
-    //friend class AdresatMenadzer;
-    //friend class PlikZUzytkownikami;
-
-
 private:
 
     PlikZUzytkownikami plikZUzytkownikami;
