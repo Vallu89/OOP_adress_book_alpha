@@ -148,3 +148,8 @@ int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika(){
 
     return idZalogowanegoUzytkownika;
 }
+
+void UzytkownikMenadzer::ustawIdZalogowanegoUzytkownika( int noweIdZalogowanegoUzytkownika ){
+
+    idZalogowanegoUzytkownika = noweIdZalogowanegoUzytkownika;
+}

@@ -32,17 +32,18 @@ public:
 
     UzytkownikMenadzer( string nazwaPlikuZUzytkownikami, int IDZALOGOWANEGOUZYTKOWNIKA = 0 )
         : plikZUzytkownikami( nazwaPlikuZUzytkownikami ), idZalogowanegoUzytkownika( IDZALOGOWANEGOUZYTKOWNIKA ){
-        idZalogowanegoUzytkownika = 0;
+        //idZalogowanegoUzytkownika = 0;
         uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
     };
     int logowanieUzytkownika();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     int pobierzIdZalogowanegoUzytkownika();
+    void ustawIdZalogowanegoUzytkownika( int noweIdZalogowanegoUzytkownika );
     void wylogujUzytkownika();
     vector <Uzytkownik> zmianaHaslaZalogowanegoUzytkownika();
     bool czyUzytkownikJestZalogowany();
-
+    vector< Uzytkownik > &pobierzUzytkownicy(){ return uzytkownicy; };
 
 
 

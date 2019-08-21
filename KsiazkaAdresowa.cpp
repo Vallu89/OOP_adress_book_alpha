@@ -53,3 +53,12 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow(){
 
     adresatMenadzer->wyswietlWszystkichAdresatow();
 }
+
+ bool KsiazkaAdresowa::czyUzytkownikJestZalogowany(){
+
+    if ( uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika() == 0  )
+        return true;
+    else
+        return false;
+
+ }

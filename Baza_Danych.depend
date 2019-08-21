@@ -1,31 +1,34 @@
 # depslib dependency file v1.0
-1564603309 source:e:\przyszlyprogramista\objectc++\baza_danych\ksiazkaadresowa.cpp
+1566333480 source:e:\przyszlyprogramista\objectc++\baza_danych\ksiazkaadresowa.cpp
 	"KsiazkaAdresowa.h"
 
-1563907811 source:e:\przyszlyprogramista\objectc++\baza_danych\uzytkownik.cpp
+1565858278 source:e:\przyszlyprogramista\objectc++\baza_danych\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1564001987 source:e:\przyszlyprogramista\objectc++\baza_danych\main.cpp
+1566420385 source:e:\przyszlyprogramista\objectc++\baza_danych\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
+	"UzytkownikMenadzer.h"
+	"AdresatMenadzer.h"
+	"MetodyPomocnicze.h"
 
-1564511661 e:\przyszlyprogramista\objectc++\baza_danych\ksiazkaadresowa.h
+1566333556 e:\przyszlyprogramista\objectc++\baza_danych\ksiazkaadresowa.h
 	<iostream>
 	"UzytkownikMenadzer.h"
 	"AdresatMenadzer.h"
 
-1563997472 e:\przyszlyprogramista\objectc++\baza_danych\uzytkownik.h
+1565858278 e:\przyszlyprogramista\objectc++\baza_danych\uzytkownik.h
 	<iostream>
 
-1564603309 source:e:\przyszlyprogramista\objectc++\baza_danych\metodypomocnicze.cpp
+1566412186 source:e:\przyszlyprogramista\objectc++\baza_danych\metodypomocnicze.cpp
 	"MetodyPomocnicze.h"
 	<iostream>
 	<sstream>
 
-1564603309 e:\przyszlyprogramista\objectc++\baza_danych\metodypomocnicze.h
+1566412186 e:\przyszlyprogramista\objectc++\baza_danych\metodypomocnicze.h
 	<iostream>
 
-1564603309 e:\przyszlyprogramista\objectc++\baza_danych\uzytkownikmenadzer.h
+1566420488 e:\przyszlyprogramista\objectc++\baza_danych\uzytkownikmenadzer.h
 	<iostream>
 	<vector>
 	<windows.h>
@@ -34,24 +37,25 @@
 	"uzytkownik.h"
 	"PlikZUzytkownikami.h"
 
-1564432554 e:\przyszlyprogramista\objectc++\baza_danych\plikzuzytkownikami.h
+1565858278 e:\przyszlyprogramista\objectc++\baza_danych\plikzuzytkownikami.h
 	<iostream>
 	<vector>
 	<fstream>
+	<cstdlib>
 	"Uzytkownik.h"
 	"MetodyPomocnicze.h"
 	"Adresat.h"
 
-1564603309 source:e:\przyszlyprogramista\objectc++\baza_danych\uzytkownikmenadzer.cpp
+1566416328 source:e:\przyszlyprogramista\objectc++\baza_danych\uzytkownikmenadzer.cpp
 	"UzytkownikMenadzer.h"
 
-1564432554 source:e:\przyszlyprogramista\objectc++\baza_danych\plikzuzytkownikami.cpp
+1565858278 source:e:\przyszlyprogramista\objectc++\baza_danych\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
-1565208574 source:e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.cpp
+1566419963 source:e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.cpp
 	"AdresatMenadzer.h"
 
-1565208574 e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.h
+1566420425 e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.h
 	<iostream>
 	<vector>
 	<windows.h>
@@ -63,10 +67,10 @@
 	"MetodyPomocnicze.h"
 	"Adresat.h"
 
-1564603309 source:e:\przyszlyprogramista\objectc++\baza_danych\adresat.cpp
+1565858278 source:e:\przyszlyprogramista\objectc++\baza_danych\adresat.cpp
 	"Adresat.h"
 
-1564603309 e:\przyszlyprogramista\objectc++\baza_danych\adresat.h
+1565858278 e:\przyszlyprogramista\objectc++\baza_danych\adresat.h
 	<iostream>
 
 1564606910 source:d:\codeblocks\c++\object c++\objectc++\baza_danych\adresat.cpp

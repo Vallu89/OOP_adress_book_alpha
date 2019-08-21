@@ -2,7 +2,7 @@
 
 
 
-Adresat AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+int AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
     Adresat adresat;
     daneOstaniegoAdresataWPliku = "";
@@ -34,7 +34,7 @@ Adresat AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
     {
         idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami();
     }
-    return adresat;
+    return idOstatniegoAdresata;
 }
 
 int AdresatMenadzer::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami()
@@ -218,3 +218,4 @@ void AdresatMenadzer::wyswietlDaneAdresata()
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
+

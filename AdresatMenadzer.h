@@ -26,7 +26,7 @@ class AdresatMenadzer{
     string daneOstaniegoAdresataWPliku;
     string liniaZDanymiAdresata;
 
-    vector <Adresat> adresaci;
+    vector<Adresat> adresaci;
 
     friend class KsiazkaAdresowa;
 
@@ -39,15 +39,17 @@ class AdresatMenadzer{
     bool czyPlikJestPusty(fstream &plikTekstowy);
 
 public:
-    AdresatMenadzer( string NAZWAPLIKUZADRESATAMI , int idZalogowanegoUzytkownika )
+    AdresatMenadzer( string NAZWAPLIKUZADRESATAMI , int idZalogowanegoUzytkownika = 0 )
         : nazwaPlikuZAdresatami ( NAZWAPLIKUZADRESATAMI ), ID_ZALOGOWANEGO_UZYTKOWNIKA ( idZalogowanegoUzytkownika ) {
 
-        adresat = wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+        wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     };
-    Adresat wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     int dodajAdresata();
     void wyswietlWszystkichAdresatow();
     void wyswietlDaneAdresata();
+    void ustawIdOstatniegoAdresata();
+    vector<Adresat> &pobierzAdresaci(){ return adresaci; };
 
 };
 

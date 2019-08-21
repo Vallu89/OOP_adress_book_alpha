@@ -15,6 +15,8 @@ class KsiazkaAdresowa{
  AdresatMenadzer *adresatMenadzer;
  const string NAZWA_PLIKU_Z_ADRESATAMI;
 
+
+
 public:
 
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami )
@@ -35,6 +37,7 @@ public:
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+    bool czyUzytkownikJestZalogowany();
 
 };
 
