@@ -6,6 +6,7 @@
 
 #include "UzytkownikMenadzer.h"
 #include "AdresatMenadzer.h"
+#include "MetodyPomocnicze.h"
 
 using namespace std;
 
@@ -14,8 +15,7 @@ class KsiazkaAdresowa{
  UzytkownikMenadzer uzytkownikMenadzer;
  AdresatMenadzer *adresatMenadzer;
  const string NAZWA_PLIKU_Z_ADRESATAMI;
-
-
+ char wybor;
 
 public:
 
@@ -38,6 +38,8 @@ public:
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
     bool czyUzytkownikJestZalogowany();
+    char wybierzOpcjeZMenuGlownego();
+    char wybierzOpcjeZMenuUzytkownika();
 
 };
 

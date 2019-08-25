@@ -6,54 +6,9 @@
 
 using namespace std;
 
-
-
-char wybierzOpcjeZMenuGlownego( char wybor )
-{
-    MetodyPomocnicze metodyPomocnicze;
-
-    system("cls");
-    cout << "    >>> MENU  GLOWNE <<<" << endl;
-    cout << "---------------------------" << endl;
-    cout << "1. Rejestracja" << endl;
-    cout << "2. Logowanie" << endl;
-    cout << "9. Koniec programu" << endl;
-    cout << "---------------------------" << endl;
-    cout << "Twoj wybor: ";
-    wybor = metodyPomocnicze.wczytajZnak();
-
-    return wybor;
-}
-
-char wybierzOpcjeZMenuUzytkownika( char wybor )
-{
-    MetodyPomocnicze metodyPomocnicze;
-
-    system("cls");
-    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
-    cout << "---------------------------" << endl;
-    cout << "1. Dodaj adresata" << endl;
-    //cout << "2. Wyszukaj po imieniu" << endl;
-    //cout << "3. Wyszukaj po nazwisku" << endl;
-    cout << "4. Wyswietl adresatow" << endl;
-    //cout << "5. Usun adresata" << endl;
-    //cout << "6. Edytuj adresata" << endl;
-    cout << "---------------------------" << endl;
-    cout << "7. Zmien haslo" << endl;
-    cout << "8. Wyloguj sie" << endl;
-    //cout << "---------------------------" << endl;
-    cout << "Twoj wybor: ";
-    wybor = metodyPomocnicze.wczytajZnak();
-
-    return wybor;
-}
-
-
-
-
 int main(){
 
-    char wybor;
+    //char wybor;
     //vector <Uzytkownik> uzytkownicy;
     //vector <Adresat> adresaci;
 
@@ -76,11 +31,10 @@ int main(){
     */
         while (true)
     {
-        if (ksiazkaAdresowa.czyUzytkownikJestZalogowany())
+        if (uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika() == 0)
         {
-            wybor = wybierzOpcjeZMenuGlownego( wybor );
 
-            switch (wybor)
+            switch (ksiazkaAdresowa.wybierzOpcjeZMenuGlownego())
             {
             case '1':
                 uzytkownikMenadzer.rejestracjaUzytkownika();
@@ -106,9 +60,7 @@ int main(){
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
             idOstatniegoAdresata = adresatMenadzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 
-            wybor = wybierzOpcjeZMenuUzytkownika( wybor );
-
-            switch (wybor)
+            switch (ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika())
             {
             case '1':
                 idOstatniegoAdresata = adresatMenadzer.dodajAdresata();

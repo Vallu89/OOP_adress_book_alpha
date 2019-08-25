@@ -31,7 +31,7 @@ fontsize=10
       <x>0</x>
       <y>300</y>
       <w>300</w>
-      <h>216</h>
+      <h>276</h>
     </coordinates>
     <panel_attributes>KsiążkaAdresowa
 --
@@ -50,7 +50,9 @@ fontsize=10
 +wylogujUzytkownika(): void
 +wczytajAdresatowZalogowanegoUzytkownikaZPliku(): void
 +dodajAdresata(): void
-+wyswietlWszystkichAdresatow(): void</panel_attributes>
++wyswietlWszystkichAdresatow(): void
++wybierzOpcjeZMenuGlownego(): char
++wybierzOpcjeZMEnuUzytkownika(): char</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
