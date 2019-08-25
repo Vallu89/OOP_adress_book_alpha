@@ -58,7 +58,8 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow(){
 
    if (uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika() == 0)
         return true;
-
+    else
+        return false;
  }
 
  char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
