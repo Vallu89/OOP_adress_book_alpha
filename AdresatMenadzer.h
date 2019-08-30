@@ -39,10 +39,10 @@ class AdresatMenadzer{
     bool czyPlikJestPusty(fstream &plikTekstowy);
 
 public:
-    AdresatMenadzer( string NAZWAPLIKUZADRESATAMI , int idZalogowanegoUzytkownika = 0 )
+    AdresatMenadzer( string NAZWAPLIKUZADRESATAMI , int idZalogowanegoUzytkownika   )
         : nazwaPlikuZAdresatami ( NAZWAPLIKUZADRESATAMI ), ID_ZALOGOWANEGO_UZYTKOWNIKA ( idZalogowanegoUzytkownika ) {
 
-        wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+         wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     };
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     int dodajAdresata();

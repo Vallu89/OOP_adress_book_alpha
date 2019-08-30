@@ -8,27 +8,13 @@ using namespace std;
 
 int main(){
 
-    //char wybor;
-    //vector <Uzytkownik> uzytkownicy;
-    //vector <Adresat> adresaci;
 
     int idOstatniegoAdresata = 0;
 
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     UzytkownikMenadzer uzytkownikMenadzer("Uzytkownicy.txt");
-    AdresatMenadzer adresatMenadzer ("Adresaci.txt");
-    /*
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    ksiazkaAdresowa.rejestracjaUzytkownika();
-    ksiazkaAdresowa.rejestracjaUzytkownika();
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    ksiazkaAdresowa.logowanieUzytkownika();
+    //AdresatMenadzer adresatMenadzer ("Adresaci.txt",uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
 
-    ksiazkaAdresowa.wylogujUzytkownika();
-    ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-    ksiazkaAdresowa.dodajAdresata();
-    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
-    */
         while (true)
     {
         if (uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika() == 0)
@@ -39,6 +25,7 @@ int main(){
             case '1':
                 uzytkownikMenadzer.rejestracjaUzytkownika();
                 break;
+
             case '2':
                 uzytkownikMenadzer.logowanieUzytkownika();
                 break;
@@ -53,7 +40,7 @@ int main(){
         }
         else
         {
-
+        AdresatMenadzer adresatMenadzer ("Adresaci.txt",uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
             //if (adresaci.empty() == true)
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
@@ -93,6 +80,5 @@ int main(){
     }
     return 0;
 }
-
 
 

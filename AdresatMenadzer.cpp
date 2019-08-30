@@ -4,7 +4,6 @@
 
 int AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
-    Adresat adresat;
     daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;
 
@@ -47,7 +46,6 @@ int AdresatMenadzer::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami()
 
 Adresat AdresatMenadzer::pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami)
 {
-    Adresat adresat;
     string pojedynczaDanaAdresata = "";
     int numerPojedynczejDanejAdresata = 1;
 
@@ -99,11 +97,9 @@ int AdresatMenadzer::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami()
 
 int AdresatMenadzer::dodajAdresata()
 {
-    Adresat adresat;
-
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata();
+    podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
     dopiszAdresataDoPliku();
@@ -113,7 +109,6 @@ int AdresatMenadzer::dodajAdresata()
 
 Adresat AdresatMenadzer::podajDaneNowegoAdresata()
 {
-    Adresat adresat;
 
     adresat.ustawId(++idOstatniegoAdresata);
     adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);

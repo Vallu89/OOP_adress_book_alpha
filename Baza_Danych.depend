@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1566764434 source:e:\przyszlyprogramista\objectc++\baza_danych\ksiazkaadresowa.cpp
+1566765052 source:e:\przyszlyprogramista\objectc++\baza_danych\ksiazkaadresowa.cpp
 	"KsiazkaAdresowa.h"
 
 1565858278 source:e:\przyszlyprogramista\objectc++\baza_danych\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1566764534 source:e:\przyszlyprogramista\objectc++\baza_danych\main.cpp
+1567185514 source:e:\przyszlyprogramista\objectc++\baza_danych\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
 	"UzytkownikMenadzer.h"
@@ -53,10 +53,10 @@
 1565858278 source:e:\przyszlyprogramista\objectc++\baza_danych\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
-1566419963 source:e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.cpp
+1567026898 source:e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.cpp
 	"AdresatMenadzer.h"
 
-1566420425 e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.h
+1567185629 e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.h
 	<iostream>
 	<vector>
 	<windows.h>
