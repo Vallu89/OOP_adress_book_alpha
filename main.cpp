@@ -13,7 +13,6 @@ int main(){
 
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     UzytkownikMenadzer uzytkownikMenadzer("Uzytkownicy.txt");
-    //AdresatMenadzer adresatMenadzer ("Adresaci.txt",uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
 
         while (true)
     {
@@ -81,4 +80,20 @@ int main(){
     return 0;
 }
 
+int _main(){
 
+
+AdresatMenadzer adresatMenadzer ("Adresaci.txt",6 );
+adresatMenadzer.wyswietlWszystkichAdresatow();
+
+    return 0;
+}
+
+int __main(){
+
+
+UzytkownikMenadzer uzytkownikMenadzer("Uzytkownicy.txt",6);
+uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika();
+
+    return 0;
+}

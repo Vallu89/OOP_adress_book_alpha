@@ -32,7 +32,6 @@ public:
 
     UzytkownikMenadzer( string nazwaPlikuZUzytkownikami, int IDZALOGOWANEGOUZYTKOWNIKA = 0 )
         : plikZUzytkownikami( nazwaPlikuZUzytkownikami ), idZalogowanegoUzytkownika( IDZALOGOWANEGOUZYTKOWNIKA ){
-        //idZalogowanegoUzytkownika = 0;
         uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
     };
     int logowanieUzytkownika();
