@@ -10,6 +10,7 @@ int main(){
 
 
     int idOstatniegoAdresata = 0;
+    int idUsunietegoAdresata = 0;
 
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     UzytkownikMenadzer uzytkownikMenadzer("Uzytkownicy.txt");
@@ -40,7 +41,7 @@ int main(){
         else
         {
         AdresatMenadzer adresatMenadzer ("Adresaci.txt",uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
-            //if (adresaci.empty() == true)
+            if (adresatMenadzer.pobierzAdresaci().empty() == true)
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
@@ -51,26 +52,26 @@ int main(){
             case '1':
                 idOstatniegoAdresata = adresatMenadzer.dodajAdresata();
                 break;
-            /*case '2':
-                wyszukajAdresatowPoImieniu(adresaci);
+            case '2':
+                adresatMenadzer.wyszukajAdresatowPoImieniu();
                 break;
             case '3':
-                wyszukajAdresatowPoNazwisku(adresaci);
-                break; */
+                adresatMenadzer.wyszukajAdresatowPoNazwisku();
+                break;
             case '4':
                 adresatMenadzer.wyswietlWszystkichAdresatow();
                 break;
-            /*case '5':
-                idUsunietegoAdresata = usunAdresata(adresaci);
-                idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+            case '5':
+                idUsunietegoAdresata = adresatMenadzer.usunAdresata();
+                //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
                 break;
-            case '6':
+            /*case '6':
                 edytujAdresata(adresaci);
                 break; */
             case '7':
                 uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika();
                 break;
-            case '8':
+            case '9':
                 uzytkownikMenadzer.ustawIdZalogowanegoUzytkownika(0);
                 adresatMenadzer.pobierzAdresaci().clear();
                 break;

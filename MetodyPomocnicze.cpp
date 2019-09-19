@@ -1,6 +1,5 @@
 #include "MetodyPomocnicze.h"
-#include <iostream>
-#include <sstream>
+
 
 
 
@@ -39,8 +38,17 @@ string MetodyPomocnicze::wczytajLinie()
     return wejscie;
 }
 
-char MetodyPomocnicze::wczytajZnak()
-{
+string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst) {
+
+    if (!tekst.empty()) {
+        transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
+        tekst[0] = toupper(tekst[0]);
+    }
+    return tekst;
+}
+
+char MetodyPomocnicze::wczytajZnak(){
+
     string wejscie = "";
     char znak  = {0};
 
@@ -56,4 +64,21 @@ char MetodyPomocnicze::wczytajZnak()
         cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
     }
     return znak;
+}
+
+int MetodyPomocnicze::wczytajLiczbeCalkowita(){
+
+    string wejscie = "";
+    int liczba = 0;
+
+    while (true)
+    {
+        getline(cin, wejscie);
+
+        stringstream myStream(wejscie);
+        if (myStream >> liczba)
+            break;
+        cout << "To nie jest liczba. Wpisz ponownie. " << endl;
+    }
+    return liczba;
 }

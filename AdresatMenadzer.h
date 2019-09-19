@@ -21,6 +21,7 @@ class AdresatMenadzer{
     int idAdresata;
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     string nazwaPlikuZAdresatami;
+    string nazwaTymczasowegoPlikuZAdresatami;
     string daneJednegoAdresataOddzielonePionowymiKreskami;
     int idOstatniegoAdresata;
     string daneOstaniegoAdresataWPliku;
@@ -31,12 +32,17 @@ class AdresatMenadzer{
     friend class KsiazkaAdresowa;
 
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami();
-    Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
+    Adresat pobierzDaneAdresata( string daneAdresataOddzielonePionowymiKreskami );
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami();
     Adresat podajDaneNowegoAdresata();
     void dopiszAdresataDoPliku();
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami();
-    bool czyPlikJestPusty(fstream &plikTekstowy);
+    bool czyPlikJestPusty();
+    void wyswietlIloscWyszukanychAdresatow( int iloscAdresatow );
+    int podajIdWybranegoAdresata();
+    int zwrocNumerLiniiSzukanegoAdresata( int idUsuwanegoAdresata );
+    void usunWybranaLinieWPliku( int numerUsuwanejLinii );
+    int UsunWybranegoAdresata( int idAdresata );
 
 public:
     AdresatMenadzer( string NAZWAPLIKUZADRESATAMI , int idZalogowanegoUzytkownika   )
@@ -50,6 +56,10 @@ public:
     void wyswietlDaneAdresata();
     void ustawIdOstatniegoAdresata();
     vector<Adresat> &pobierzAdresaci(){ return adresaci; };
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+    int usunAdresata();
+
 
 };
 

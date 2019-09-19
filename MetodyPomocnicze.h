@@ -3,7 +3,9 @@
 
 
 #include <iostream>
-
+#include <iostream>
+#include <sstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -14,8 +16,10 @@ public:
         static int konwersjaStringNaInt(string liczba);
         static string pobierzLiczbe(string tekst, int pozycjaZnaku);
         static string wczytajLinie();
+        static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
         bool czyPlikJestPusty(fstream &plikTekstowy);
-        char wczytajZnak();
+        static char wczytajZnak();
+        static int wczytajLiczbeCalkowita();
 
 };
 
