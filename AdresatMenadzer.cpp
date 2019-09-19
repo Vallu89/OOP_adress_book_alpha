@@ -308,8 +308,7 @@ int AdresatMenadzer::usunAdresata(){
             znak = MetodyPomocnicze::wczytajZnak();
             if (znak == 't')
             {
-                numerLiniiUsuwanegoAdresata = zwrocNumerLiniiSzukanegoAdresata(idUsuwanegoAdresata);
-                usunWybranaLinieWPliku(numerLiniiUsuwanegoAdresata);
+                usunAdresata();
                 adresaci.erase(itr);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
@@ -340,7 +339,7 @@ int AdresatMenadzer::podajIdWybranegoAdresata(){
     return idWybranegoAdresata;
 }
 
-int AdresatMenadzer::UsunWybranegoAdresata( int idAdresata ) {
+int AdresatMenadzer::usunWybranegoAdresata( int idAdresata ) {
 
     bool czyIstniejeAdresat = false;
     int numerLiniiWPlikuTekstowym = 1;
@@ -376,8 +375,8 @@ int AdresatMenadzer::UsunWybranegoAdresata( int idAdresata ) {
                 odczytywanyPlikTekstowy.close();
                 tymczasowyPlikTekstowy.close();
 
-                usunPlik(nazwaPlikuZAdresatami);
-                zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, nazwaPlikuZAdresatami);
+                usunPlik();
+                zmienNazwePliku();
                 return 0;
 
             } else
@@ -420,7 +419,21 @@ void AdresatMenadzer::usunWybranaLinieWPliku(int numerUsuwanejLinii)
         odczytywanyPlikTekstowy.close();
         tymczasowyPlikTekstowy.close();
 
-        usunPlik(nazwaPlikuZAdresatami);
-        zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, nazwaPlikuZAdresatami);
+        usunPlik();
+        zmienNazwePliku();
     }
+}
+
+void AdresatMenadzer::usunPlik(){
+
+    if (remove(nazwaPlikuZAdresatami.c_str()) == 0) {}
+    else
+        cout << "Nie udalo sie usunac pliku " << nazwaPlikuZAdresatami << endl;
+}
+
+void AdresatMenadzer::zmienNazwePliku(){
+
+    if (rename(nazwaTymczasowegoPlikuZAdresatami.c_str(), nazwaPlikuZAdresatami.c_str()) == 0) {}
+    else
+        cout << "Nazwa pliku nie zostala zmieniona." << nazwaTymczasowegoPlikuZAdresatami << endl;
 }

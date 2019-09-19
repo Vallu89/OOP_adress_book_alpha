@@ -42,7 +42,9 @@ class AdresatMenadzer{
     int podajIdWybranegoAdresata();
     int zwrocNumerLiniiSzukanegoAdresata( int idUsuwanegoAdresata );
     void usunWybranaLinieWPliku( int numerUsuwanejLinii );
-    int UsunWybranegoAdresata( int idAdresata );
+    int usunWybranegoAdresata( int idAdresata );
+    void usunPlik();
+    void zmienNazwePliku();
 
 public:
     AdresatMenadzer( string NAZWAPLIKUZADRESATAMI , int idZalogowanegoUzytkownika   )
@@ -59,6 +61,7 @@ public:
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
     int usunAdresata();
+
 
 
 };

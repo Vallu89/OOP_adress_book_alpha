@@ -42,10 +42,7 @@ public:
     void wylogujUzytkownika();
     vector <Uzytkownik> zmianaHaslaZalogowanegoUzytkownika();
     bool czyUzytkownikJestZalogowany();
-    vector< Uzytkownik > &pobierzUzytkownicy(){ return uzytkownicy
-    ; };
-
-
+    vector< Uzytkownik > &pobierzUzytkownicy(){ return uzytkownicy; };
 
 };
 
