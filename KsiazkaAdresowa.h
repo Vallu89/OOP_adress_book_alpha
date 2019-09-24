@@ -41,6 +41,7 @@ public:
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
 
+
 };
 
 #endif

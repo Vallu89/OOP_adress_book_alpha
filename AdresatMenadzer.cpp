@@ -160,6 +160,8 @@ void AdresatMenadzer::dopiszAdresataDoPliku()
 
         if (czyPlikJestPusty() == true)
         {
+            cout << "Jest pusty";
+            system("pause");
             plikTekstowy << liniaZDanymiAdresata;
         }
         else
@@ -308,7 +310,7 @@ int AdresatMenadzer::usunAdresata(){
             znak = MetodyPomocnicze::wczytajZnak();
             if (znak == 't')
             {
-                usunAdresata();
+                usunWybranegoAdresata( idUsuwanegoAdresata );
                 adresaci.erase(itr);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
@@ -341,12 +343,12 @@ int AdresatMenadzer::podajIdWybranegoAdresata(){
 
 int AdresatMenadzer::usunWybranegoAdresata( int idAdresata ) {
 
-    bool czyIstniejeAdresat = false;
+
     int numerLiniiWPlikuTekstowym = 1;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     fstream plikTekstowy;
 
-    fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
+    fstream tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
     int numerWczytanejLinii = 1;
 
@@ -356,9 +358,9 @@ int AdresatMenadzer::usunWybranegoAdresata( int idAdresata ) {
     if (plikTekstowy.good() == true && idAdresata != 0) {
         while(getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {
 
-            if( idAdresata == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami ()) {
+            if( idAdresata == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami()) {
 
-                while (getline(odczytywanyPlikTekstowy, wczytanaLinia)) {
+                while (getline(plikTekstowy, wczytanaLinia)) {
                     // Tych przypadkow jest tyle, gdyz chcemy osiagnac taki efekt,
                     // aby na koncu pliku nie bylo pustej linii
                     if ( numerWczytanejLinii == numerLiniiWPlikuTekstowym ) {}
@@ -372,7 +374,7 @@ int AdresatMenadzer::usunWybranegoAdresata( int idAdresata ) {
                         tymczasowyPlikTekstowy << endl << wczytanaLinia;
                     numerWczytanejLinii++;
                 }
-                odczytywanyPlikTekstowy.close();
+                plikTekstowy.close();
                 tymczasowyPlikTekstowy.close();
 
                 usunPlik();
@@ -382,12 +384,9 @@ int AdresatMenadzer::usunWybranegoAdresata( int idAdresata ) {
             } else
                 numerLiniiWPlikuTekstowym++;
         }
-        if (czyIstniejeAdresat = false) {
-            plikTekstowy.close();
-            return 0;
-        }
     }
-    return 0;
+
+return 0;
 }
 
 void AdresatMenadzer::usunWybranaLinieWPliku(int numerUsuwanejLinii)
@@ -436,4 +435,150 @@ void AdresatMenadzer::zmienNazwePliku(){
     if (rename(nazwaTymczasowegoPlikuZAdresatami.c_str(), nazwaPlikuZAdresatami.c_str()) == 0) {}
     else
         cout << "Nazwa pliku nie zostala zmieniona." << nazwaTymczasowegoPlikuZAdresatami << endl;
+}
+
+void AdresatMenadzer::edytujAdresata()
+{
+    system("cls");
+    int idEdytowanegoAdresata = 0;
+
+    cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
+    idEdytowanegoAdresata = podajIdWybranegoAdresata();
+
+    char wybor;
+    bool czyIstniejeAdresat = false;
+
+    for (int i = 0; i < adresaci.size(); i++)
+    {
+        if (adresaci[i].pobierzId() == idEdytowanegoAdresata)
+        {
+            czyIstniejeAdresat = true;
+            wybor = wybierzOpcjeZMenuEdycja();
+
+            switch (wybor)
+            {
+            case '1':
+                cout << "Podaj nowe imie: ";
+                adresaci[i].pobierzImie() = MetodyPomocnicze::wczytajLinie();
+                //adresaci[i].pobierzImie() = zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresaci[i].pobierzImie());
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                break;
+            case '2':
+                cout << "Podaj nowe nazwisko: ";
+                adresaci[i].pobierzNazwisko() = MetodyPomocnicze::wczytajLinie();
+                //adresaci[i].nazwisko = zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresaci[i].nazwisko);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                break;
+            case '3':
+                cout << "Podaj nowy numer telefonu: ";
+                adresaci[i].pobierzNumerTelefonu() = MetodyPomocnicze::wczytajLinie();
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                break;
+            case '4':
+                cout << "Podaj nowy email: ";
+                adresaci[i].pobierzEmail() = MetodyPomocnicze::wczytajLinie();
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                break;
+            case '5':
+                cout << "Podaj nowy adres zamieszkania: ";
+                adresaci[i].pobierzAdres() = MetodyPomocnicze::wczytajLinie();;
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                break;
+            case '6':
+                cout << endl << "Powrot do menu uzytkownika" << endl << endl;
+                break;
+            default:
+                cout << endl << "Nie ma takiej opcji w menu! Powrot do menu uzytkownika." << endl << endl;
+                break;
+            }
+        }
+    }
+    if (czyIstniejeAdresat == false)
+    {
+        cout << endl << "Nie ma takiego adresata." << endl << endl;
+    }
+    system("pause");
+}
+
+char AdresatMenadzer::wybierzOpcjeZMenuEdycja(){
+
+    MetodyPomocnicze metodyPomocnicze;
+
+    cout << endl << "   >>> MENU  EDYCJA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Ktore dane zaktualizowac: " << endl;
+    cout << "1 - Imie" << endl;
+    cout << "2 - Nazwisko" << endl;
+    cout << "3 - Numer telefonu" << endl;
+    cout << "4 - Email" << endl;
+    cout << "5 - Adres" << endl;
+    cout << "6 - Powrot " << endl;
+    cout << endl << "Twoj wybor: ";
+    wybor = metodyPomocnicze.wczytajZnak();
+
+    return wybor;
+}
+
+void AdresatMenadzer::zaktualizujDaneWybranegoAdresata( Adresat adresat )
+{
+    int numerLiniiEdytowanegoAdresata = 0; //do usuniecia
+    string liniaZDanymiAdresata = ""; //do usuniecia
+
+    edytujDaneWybranegoAdresata( adresat );
+    //numerLiniiEdytowanegoAdresata = zwrocNumerLiniiSzukanegoAdresata(adresat.pobierzId());
+    //liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
+    //edytujWybranaLinieWPliku(numerLiniiEdytowanegoAdresata, liniaZDanymiAdresata);
+
+    cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
+}
+
+void AdresatMenadzer::edytujDaneWybranegoAdresata( Adresat adresat ) {
+
+    int numerLiniiEdytowanegoAdresata = 0;
+    string liniaZDanymiAdresata = "";
+
+
+    int numerLiniiWPlikuTekstowym = 1;
+    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
+    fstream plikTekstowy;
+
+    fstream tymczasowyPlikTekstowy;
+    string wczytanaLinia = "";
+    int numerWczytanejLinii = 1;
+
+    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
+    tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
+
+    if (plikTekstowy.good() == true && adresat.pobierzId() != 0) {
+        while(getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {
+            if(idAdresata == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami()) {
+                numerLiniiEdytowanegoAdresata = numerLiniiWPlikuTekstowym;
+                liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami();
+
+                while ( getline(plikTekstowy, wczytanaLinia )) {
+                    if ( numerWczytanejLinii == numerLiniiEdytowanegoAdresata ) {
+                        if (numerWczytanejLinii == 1)
+                            tymczasowyPlikTekstowy << liniaZDanymiAdresata;
+                        else if (numerWczytanejLinii > 1)
+                            tymczasowyPlikTekstowy << endl << liniaZDanymiAdresata;
+                    } else {
+                        if (numerWczytanejLinii == 1)
+                            tymczasowyPlikTekstowy << wczytanaLinia;
+                        else if (numerWczytanejLinii > 1)
+                            tymczasowyPlikTekstowy << endl << wczytanaLinia;
+                    }
+                    numerWczytanejLinii++;
+                }
+                plikTekstowy.close();
+                tymczasowyPlikTekstowy.close();
+
+                usunPlik();
+                zmienNazwePliku();
+
+            } else
+                numerLiniiWPlikuTekstowym++;
+        }
+
+    }
+
 }

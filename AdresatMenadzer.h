@@ -26,6 +26,7 @@ class AdresatMenadzer{
     int idOstatniegoAdresata;
     string daneOstaniegoAdresataWPliku;
     string liniaZDanymiAdresata;
+    char wybor;
 
     vector<Adresat> adresaci;
 
@@ -45,12 +46,16 @@ class AdresatMenadzer{
     int usunWybranegoAdresata( int idAdresata );
     void usunPlik();
     void zmienNazwePliku();
+    char wybierzOpcjeZMenuEdycja();
+    void zaktualizujDaneWybranegoAdresata( Adresat adresat );
+    void edytujDaneWybranegoAdresata( Adresat adresat );
 
 public:
     AdresatMenadzer( string NAZWAPLIKUZADRESATAMI , int idZalogowanegoUzytkownika   )
         : nazwaPlikuZAdresatami ( NAZWAPLIKUZADRESATAMI ), ID_ZALOGOWANEGO_UZYTKOWNIKA ( idZalogowanegoUzytkownika ) {
 
          wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+         nazwaTymczasowegoPlikuZAdresatami = "temp.txt";
     };
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     int dodajAdresata();
@@ -61,6 +66,7 @@ public:
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
     int usunAdresata();
+    void edytujAdresata();
 
 
 

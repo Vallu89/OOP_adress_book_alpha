@@ -62,12 +62,11 @@ int main(){
                 adresatMenadzer.wyswietlWszystkichAdresatow();
                 break;
             case '5':
-                idUsunietegoAdresata = adresatMenadzer.usunAdresata();
-                //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+                adresatMenadzer.usunAdresata();
                 break;
-            /*case '6':
-                edytujAdresata(adresaci);
-                break; */
+            case '6':
+                adresatMenadzer.edytujAdresata();
+                break;
             case '7':
                 uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika();
                 break;
@@ -84,8 +83,8 @@ int main(){
 int _main(){
 
 
-AdresatMenadzer adresatMenadzer ("Adresaci.txt",6 );
-adresatMenadzer.wyswietlWszystkichAdresatow();
+AdresatMenadzer adresatMenadzer ("Adresaci.txt",1 );
+adresatMenadzer.usunAdresata();
 
     return 0;
 }
