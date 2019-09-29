@@ -12,15 +12,16 @@
 #include "PlikZUzytkownikami.h"
 #include "MetodyPomocnicze.h"
 #include "Adresat.h"
+#include "PlikTekstowy.h"
 
 using namespace std;
 
-class AdresatMenadzer{
+class AdresatMenadzer: public PlikTekstowy{
 
     Adresat adresat;
     int idAdresata;
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
-    string nazwaPlikuZAdresatami;
+    //string nazwaPlikuZAdresatami;
     string nazwaTymczasowegoPlikuZAdresatami;
     string daneJednegoAdresataOddzielonePionowymiKreskami;
     int idOstatniegoAdresata;
@@ -38,7 +39,7 @@ class AdresatMenadzer{
     Adresat podajDaneNowegoAdresata();
     void dopiszAdresataDoPliku();
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami();
-    bool czyPlikJestPusty();
+    bool czyPlikJestPusty(fstream &plikTekstowy);
     void wyswietlIloscWyszukanychAdresatow( int iloscAdresatow );
     int podajIdWybranegoAdresata();
     int zwrocNumerLiniiSzukanegoAdresata( int idUsuwanegoAdresata );
@@ -47,12 +48,12 @@ class AdresatMenadzer{
     void usunPlik();
     void zmienNazwePliku();
     char wybierzOpcjeZMenuEdycja();
-    void zaktualizujDaneWybranegoAdresata( Adresat adresat );
-    void edytujDaneWybranegoAdresata( Adresat adresat );
+    void zaktualizujDaneWybranegoAdresata( int idEdytowanegoAdresata );
+    void edytujDaneWybranegoAdresata(int idEdytowanegoAdresata );
 
 public:
     AdresatMenadzer( string NAZWAPLIKUZADRESATAMI , int idZalogowanegoUzytkownika   )
-        : nazwaPlikuZAdresatami ( NAZWAPLIKUZADRESATAMI ), ID_ZALOGOWANEGO_UZYTKOWNIKA ( idZalogowanegoUzytkownika ) {
+        : PlikTekstowy( NAZWAPLIKUZADRESATAMI ), ID_ZALOGOWANEGO_UZYTKOWNIKA ( idZalogowanegoUzytkownika ) {
 
          wczytajAdresatowZalogowanegoUzytkownikaZPliku();
          nazwaTymczasowegoPlikuZAdresatami = "temp.txt";
@@ -60,7 +61,7 @@ public:
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     int dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    void wyswietlDaneAdresata();
+    void wyswietlDaneAdresata(Adresat adresat);
     void ustawIdOstatniegoAdresata();
     vector<Adresat> &pobierzAdresaci(){ return adresaci; };
     void wyszukajAdresatowPoImieniu();
