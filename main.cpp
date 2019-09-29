@@ -42,10 +42,7 @@ int main(){
         {
         AdresatMenadzer adresatMenadzer ("Adresaci.txt",uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
             if (adresatMenadzer.pobierzAdresaci().empty() == true)
-                // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
-                // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
-                // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-            idOstatniegoAdresata = adresatMenadzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+                idOstatniegoAdresata = adresatMenadzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 
             switch (ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika())
             {

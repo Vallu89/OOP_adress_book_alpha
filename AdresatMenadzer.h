@@ -21,7 +21,6 @@ class AdresatMenadzer: public PlikTekstowy{
     Adresat adresat;
     int idAdresata;
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
-    //string nazwaPlikuZAdresatami;
     string nazwaTymczasowegoPlikuZAdresatami;
     string daneJednegoAdresataOddzielonePionowymiKreskami;
     int idOstatniegoAdresata;

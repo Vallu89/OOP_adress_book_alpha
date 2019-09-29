@@ -55,10 +55,10 @@
 1569777479 source:e:\przyszlyprogramista\objectc++\baza_danych\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
-1569775611 source:e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.cpp
+1569778474 source:e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.cpp
 	"AdresatMenadzer.h"
 
-1569778474 e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.h
+1569778929 e:\przyszlyprogramista\objectc++\baza_danych\adresatmenadzer.h
 	<iostream>
 	<vector>
 	<windows.h>
