@@ -343,7 +343,7 @@ int AdresatMenadzer::usunWybranegoAdresata( int idAdresata ) {
 
 
     int numerLiniiWPlikuTekstowym = 1;
-    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
+    daneJednegoAdresataOddzielonePionowymiKreskami = "";
     fstream plikTekstowy;
 
     fstream tymczasowyPlikTekstowy;
