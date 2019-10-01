@@ -345,10 +345,9 @@ int AdresatMenadzer::usunWybranegoAdresata( int idAdresata ) {
     int numerLiniiWPlikuTekstowym = 1;
     daneJednegoAdresataOddzielonePionowymiKreskami = "";
     fstream plikTekstowy;
+    bool czyUsunal = false;
 
     fstream tymczasowyPlikTekstowy;
-    string wczytanaLinia = "";
-    int numerWczytanejLinii = 1;
 
     plikTekstowy.open(NAZWA_PLIKU.c_str(), ios::in);
     tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
@@ -356,36 +355,38 @@ int AdresatMenadzer::usunWybranegoAdresata( int idAdresata ) {
     if (plikTekstowy.good() == true && idAdresata != 0) {
         while(getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {
 
-            if( idAdresata == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami()) {
+            if( idAdresata == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami())
+                czyUsunal = true;
 
-                while (getline(plikTekstowy, wczytanaLinia)) {
-                    // Tych przypadkow jest tyle, gdyz chcemy osiagnac taki efekt,
-                    // aby na koncu pliku nie bylo pustej linii
-                    if ( numerWczytanejLinii == numerLiniiWPlikuTekstowym ) {}
-                    else if ( numerWczytanejLinii == 1 && numerWczytanejLinii != numerLiniiWPlikuTekstowym )
-                        tymczasowyPlikTekstowy << wczytanaLinia;
-                    else if ( numerWczytanejLinii == 2 && numerLiniiWPlikuTekstowym == 1 )
-                        tymczasowyPlikTekstowy << wczytanaLinia;
-                    else if ( numerWczytanejLinii > 2 && numerLiniiWPlikuTekstowym == 1 )
-                        tymczasowyPlikTekstowy << endl << wczytanaLinia;
-                    else if ( numerWczytanejLinii > 1 && numerLiniiWPlikuTekstowym != 1 )
-                        tymczasowyPlikTekstowy << endl << wczytanaLinia;
-                    numerWczytanejLinii++;
-                }
-                plikTekstowy.close();
-                tymczasowyPlikTekstowy.close();
 
-                usunPlik();
-                zmienNazwePliku();
-                return 0;
+            // Tych przypadkow jest tyle, gdyz chcemy osiagnac taki efekt,
+            // aby na koncu pliku nie bylo pustej linii
 
-            } else
-                numerLiniiWPlikuTekstowym++;
+            else if ( numerLiniiWPlikuTekstowym == 1 )
+                tymczasowyPlikTekstowy << daneJednegoAdresataOddzielonePionowymiKreskami;
+            else if ( numerLiniiWPlikuTekstowym == 2 && czyUsunal == true )
+                tymczasowyPlikTekstowy << daneJednegoAdresataOddzielonePionowymiKreskami;
+            else if ( numerLiniiWPlikuTekstowym > 1 )
+                tymczasowyPlikTekstowy << endl << daneJednegoAdresataOddzielonePionowymiKreskami;
+
+            numerLiniiWPlikuTekstowym++;
         }
-    }
 
-return 0;
+
+        plikTekstowy.close();
+        tymczasowyPlikTekstowy.close();
+
+        usunPlik();
+        zmienNazwePliku();
+        return 0;
+
+
+    }
+    return 0;
 }
+
+
+
 
 void AdresatMenadzer::usunWybranaLinieWPliku(int numerUsuwanejLinii)
 {

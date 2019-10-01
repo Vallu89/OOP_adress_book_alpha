@@ -81,7 +81,7 @@ int _main(){
 
 
 AdresatMenadzer adresatMenadzer ("Adresaci.txt",1 );
-adresatMenadzer.edytujAdresata();
+adresatMenadzer.usunAdresata();
 
     return 0;
 }
